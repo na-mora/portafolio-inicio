@@ -1,0 +1,544 @@
+:root {
+    
+    /* 1. Definimos los colores*/
+    --negroOscuro: #000;
+    --negro: rgb(36, 36, 36);
+    --gris: #aaa;
+    --blanco: #fff;
+    --primario: rgb(152, 152, 154);
+
+    /* 2. Pegamos la parte de google fonts en css*/
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+/* 3. Box-sizing: BorderBox (Sitio responsivo)*/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    /* 4. Agregamos el font-size 62.5% para que 10px = 1rem*/
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/* 5. Agregamos los globales*/
+/* Globales */
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    /*6. Interlineado de todo el proyecto*/
+    line-height: 1.5;
+}
+
+/* 7. Todos los parrafos tendran estas propiedades*/
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+/* 8. Quito todos las lineas de los enlaces que salen en la parte de abajo (Botones)*/
+a{
+    text-decoration: none;
+}
+
+/* 9. Todas las imagenes ocuparan el 100% de largo*/
+img{
+    max-width: 100%;
+    width: 100%;
+}
+
+/*10. Defino el tamano de un contenedor*/
+.contenedor{
+    max-width: 120rem; /*1200 px*/
+    margin: 0 auto; /* Para centrarlo */
+}
+
+/*11. Propiedades de los titulos*/
+h1, h2, h3{
+    text-align: center;
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+}
+
+/*12. Definimos el tamaño de cada uno de los titulos. **Acá teminamos los atributos globales y el background*/
+h1{
+    font-size: 4rem; 
+}
+h2{
+    font-size: 3.8rem;
+    margin: 0;
+}
+h3{
+    font-size: 3rem;
+}
+p{
+    color: var(--blanco);
+}
+
+.bold{
+    font-weight: bold;
+}
+/*Configuracion de los botones del blog*/
+.boton{
+    /*En un dispositivo pequeño quiero que se vea de lado a lado, todo el tamano*/
+    display: block;
+
+    /*Le ponemos la fuente de los headings*/
+    font-family: var(--fuentePrincipal);
+
+    /*Color blanco*/
+    color: var(--blanco);
+
+    /*Alineacion del texto en el centro*/
+    text-align: center;
+
+    /*Padding 1 vertical, 3 horizontal*/
+    padding: 1rem 3rem;
+
+    /*Tamano de letra 1.8rem*/
+    font-size: 1.8rem;
+
+    /*Todas las letras en mayuscula*/
+    text-transform: uppercase;
+
+    /*Bold Negrita*/
+    font-weight: 700;
+
+    /*Le estamos dando nuestros propios estilos*/
+    border: none;
+}
+
+/******************************/
+/* Pagina de inicio */
+/******************************/
+
+/* Header */
+
+.header{
+    background-color: rgb(36, 36, 36);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.header-logo{
+    display: flex;
+    margin-left: 5rem;
+}
+
+.header-logo-home{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo-home p{
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.header-logo-home img{
+    height: 3rem;
+    width: 3em;
+    filter: invert(100%);
+}
+
+.header-navegacion{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-right: 5rem;
+}
+
+.header-navegacion-link{
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+}
+
+.header-navegacion-link:hover{
+    color: rgb(152, 152, 154);
+}
+
+
+.principal{
+    background-color: rgb(152, 152, 154);
+    display: flex;
+}
+
+
+
+.principal-aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3rem;
+    padding: 2rem;
+    height: 50rem;
+    width: 11rem;
+    background-color: rgb(36, 36, 36);
+    margin-right: 4rem; 
+   
+    border-bottom-right-radius: 4rem;
+}
+
+.principal-aside-icono{
+    height: 3rem;
+    width: 3rem;
+    filter: invert(100%);
+}
+
+.contenido{
+    background-color: rgb(36, 36, 36);
+    width: 81%;
+    display: grid;
+    height: 40rem;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin: 0;
+    border-radius: 2rem;
+    margin-top: 6rem;
+    margin-right: 5rem;
+    
+    max-width: 1320px;
+
+    animation-duration: .3s;
+    animation-name: slidein;
+
+}
+@keyframes slidein {
+    from {
+        margin-left: 70%;
+       
+    }
+    to{
+        margin-left: 0%;
+    }
+}
+
+.principal-imagen{
+    background-image: url('../img/Perfil.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24.5rem;
+    height: 30rem;
+    border-radius: 2rem;
+    border: 3px solid var(--blanco);
+    margin-left: 6rem;
+    margin-right: 1rem;
+}
+
+.principal-descripcion{
+    text-align: left;
+    margin-right: 5rem;
+}
+
+.principal-descripcion h2{
+    margin: 0;
+    font-size: 3.8rem;
+}
+
+.sobre-mi{
+    background-color: var(--negro);
+    border-radius: 2rem;
+    width: 90%;
+    height: 170rem;
+}
+
+.sobre-mi h3{
+    color: var(--blanco);
+    padding-top: 3rem;
+    padding-bottom: 2rem ;
+    margin: 0;
+}
+
+.formacion{
+    background-color: var(--primario);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+    height: 32rem;
+    padding-left: 4rem;
+    padding-top: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-right: 3rem;
+}
+
+.formacion-icono{
+    height: 10rem;
+    width: 22rem;
+    background-color: var(--blanco);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.uniandes{
+    background-image: url('data:image/png;base64,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');
+}
+
+.udemy{
+    background-image: url('https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg');
+    background-size: 80%;
+    background-position: center;
+}
+
+.formacion-descripcion h4{
+    font-size: 3rem;
+    padding-top: 1rem;
+}
+
+.formacion-descripcion h4, .formacion-descripcion p{
+    color: #111;
+    margin: 0;
+}
+
+.habilidades{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    height: 52rem;
+    background-color: var(--primario);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+
+    padding-top: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+}
+
+.habilidad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.habilidad-imagen{
+    background-color: var(--blanco);
+    background-size: cover;
+    border-radius: 2rem;
+    padding: 1rem;
+    height: 18rem;
+    width: 18rem;
+
+    display: flex;
+    align-items: center;
+}
+
+.habilidad-imagen img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.habilidad p{
+    color: #111;
+    margin: 0;
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    padding: 0;
+}
+
+.footer{
+    margin-top: 3rem;
+    background-color: var(--negro);
+    height: 12rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.footer p{
+    margin: 0;
+}
+
+
+/******************************/
+/* Pagina Portafolio FrontEnd */
+/******************************/
+
+.frontend{
+    margin-top: 2rem;
+    background-color: var(--negro);
+    border-radius: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+.frontend h3{
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+.frontend-navegacion{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.frontend-navegacion-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+    height: 17rem;
+}
+
+.frontend-navegacion-link:hover{
+    cursor: pointer;
+}
+
+.frontend-navegacion-link img{
+    height: 10rem;
+    width: 10rem;
+}
+
+.frontend-navegacion-link p{
+    color: #111;
+    margin: 0;
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+
+.listado-proyectos-front{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+    border-radius: 2rem;
+    height: 200rem;
+}
+
+.proyecto-front{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    
+    background-color: var(--blanco);
+    border-radius:1rem ;
+}
+
+.proyecto-front img{
+    border-radius: 1rem;
+    
+    height: 37rem;
+    width: 50rem;
+}
+
+.proyecto-front-detalle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proyecto-front-detalle h3{
+    margin-bottom: 0;
+}
+
+.proyecto-front-detalle p, .proyecto-front-detalle h3{
+    color: var(--negro);
+}
+
+.boton-visitar{
+    background-color: blue;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.boton-detalles{
+    background-color: green;
+    border-radius: 1rem;
+}
+
+.boton-visitar:hover, .boton-detalles:hover{
+    background-color: #000;
+}
+
+
+/******************************/
+/* Pagina Contacto */
+/******************************/
+
+.contacto{
+    background-color: var(--negro);
+    height: 72rem;
+    border-radius: 2rem;
+}
+
+.contacto h2{
+    color: #111;
+}
+
+.contacto-formulario{
+    background-color: var(--primario);
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin: 8rem;
+    margin-top: 4rem;
+    padding: 4rem;
+    border-bottom: 2px solid #111;
+
+
+}
+
+.contacto-formulario label{
+    font-family: var(--fuentePrincipal);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.contacto-formulario input{
+    height: 5rem;
+    font-size: 2.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contacto-formulario textarea{
+    height: 18rem;
+    border-radius: 1rem;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+}
+
+.boton-enviar{
+    background-color: rgb(9, 22, 202);
+    
+}
+
+.boton-enviar:hover{
+    background-color: var(--negro);
+    cursor: pointer;
+}

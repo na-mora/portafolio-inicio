@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" >
+    <link rel="stylesheet" href="./css/normalize.css" >
+
+     <!-- Fuente del proyeto Staatliches -> selecte this style -> embed-->
+     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <a href="./about.html" class="header-logo-home">
+                <img src="./img/usuario.svg" alt="Logo">
+                <p>Nel Alejandro Mora Pinto</p>
+            </a>
+        </div>
+        <div class="header-navegacion">
+            <a href="./index.html" class="header-navegacion-link">Acerca</a>
+            <a href="./frontEnd.html" class="header-navegacion-link">Portafolio FrontEnd</a>
+            <a href="./backend.html" class="header-navegacion-link">Portafolio Backend</a>
+            <a href="./contacto.html" class="header-navegacion-link">Contacto</a>
+        </div>
+    </header>
+    
+    <main class="contenedor contacto">
+        
+        <form method ="POST" class="contacto-formulario" novalidate>
+        
+        <h2>Contacto</h2>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre completo" value ="">
+        <label for="email">Correo Electronico</label>
+        <input type="email" name="email" id="email" placeholder="Ingresa tu correo electronico" value ="" >
+        <label for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje" placeholder="Ingresa el mensaje"></textarea>
+        
+        <input type="submit" value="Enviar" class=" boton boton-enviar">
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>Sitio web de portafolio de proyectos implementados con diferentes tecnologias</p>
+        <p>Nel Alejandro Mora Pinto</p>
+        <p>2022</p>
+    </footer>
+
+</body>
+</html>
